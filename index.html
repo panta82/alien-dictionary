@@ -1,0 +1,74 @@
+<html>
+<head>
+</head>
+<body>
+<div>
+	<h2>Alien dictionary</h2>
+	<p><a href="https://leetcode.com/problems/alien-dictionary/">Paywalled link</a></p>
+	<div style="white-space: pre-wrap">
+Problem Description:
+
+There is a new alien language which uses the latin alphabet. However, the order among letters are unknown to you. You receive a list of words from the dictionary, wherewords are sorted lexicographically by the rules of this new language. Derive the order of letters in this language.
+
+For example,
+Given the following words in dictionary,
+
+[
+	"wrt",
+	"wrf",
+	"er",
+	"ett",
+	"rftt"
+]
+The correct order is: "wertf".
+
+Note:
+
+You may assume all letters are in lowercase.
+If the order is invalid, return an empty string.
+There may be multiple valid order of letters, return any one of them is fine.
+	</pre>
+</div>
+
+<hr />
+
+<div id="output"></div>
+
+<script src="util.js"></script>
+<script src="solution.js"></script>
+<script>
+	shimConsole(document.getElementById('output'));
+
+	const words1 = [
+		'wrt',
+		'wrf',
+		'er',
+		'ett',
+		'rftt'
+	];
+	test('Original example', 'wertf', words1);
+
+	const words2 = [
+		'abc',
+		'abc',
+		'abcd',
+		'bcd',
+		'bce',
+		'ccccc',
+		'ccccd',
+		'ea',
+		'edda',
+		'z'
+	];
+	test('Custom english example', ENGLISH, words2);
+	testTranslated('Random alien language', createAlienLanguage(), words2);
+
+	const badWords = [
+		'abc',
+		'bcd',
+		'abc'
+	];
+	test('Badly ordered words', ENGLISH, badWords);
+</script>
+</body>
+</html>
