@@ -2,7 +2,7 @@ function order(words) {
 	const rules = {};
 	const weights = {};
 	
-	// Extract ordering rules from input words
+	// 1. Extract ordering rules from input words
 	/*
 		[
 			'wrt',
@@ -35,7 +35,7 @@ function order(words) {
 		} while (before === after);
 
 		if (rules[after] && rules[after].indexOf(before) !== -1) {
-			// Invalid input; throw exception in real code?
+			// Invalid input. Conflicting rule
 			return '';
 		}
 
@@ -49,7 +49,7 @@ function order(words) {
 		}
 	}
 
-	// Resolve weights
+	// 2. Resolve weights
 	/*
 		{
 			w: 0,
@@ -60,6 +60,7 @@ function order(words) {
 		}
 	*/
 	let changed;
+	const alphabetLength = Object.keys(weights).length;
 	do {
 		changed = false;
 		ruleLoop:
@@ -69,6 +70,14 @@ function order(words) {
 				const after = afterList[i];
 				if (weights[after] <= weights[before]) {
 					weights[after] = weights[before] + 1;
+
+					// Check if infinite loop:
+					// I will assume in a solvable alphabet the highest index will never
+					// be greater than total number of letters
+					if (weights[after] > alphabetLength) {
+						return '';
+					}
+
 					changed = true;
 					break ruleLoop;
 				}
@@ -76,7 +85,7 @@ function order(words) {
 		}
 	} while (changed);
 
-	// Order results according to weights
+	// 3. Order results according to weights
 	const result = Object.keys(weights);
 	result.sort((a, b) => {
 		return weights[a] - weights[b];
