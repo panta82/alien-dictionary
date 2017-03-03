@@ -1,4 +1,4 @@
-[](@remove_next_line)
+[//]: # (@remove_next_line)
 # Coding challenge: Alien dictionary
 
 I occasionally do coding challenges, so I decided to start recording my solutions here (well, at least the successful ones).
@@ -75,9 +75,9 @@ In the last step, I just sort the letters using these weights and create a seque
 
 ### Code
 
-[](@include_code_file solution.js javascript)
+[//]: # (@include_code_file solution.js javascript)
 
-Full code is available here: [solution.js](solution.js)
+Full code is available here: [solution.js](https://github.com/panta82/alien-dictionary/blob/master/solution.js)
 
 See it in action here: [alien-dictionary](https://panta82.github.io/alien-dictionary/)
 
