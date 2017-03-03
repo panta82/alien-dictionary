@@ -1,3 +1,4 @@
+[](@remove_next_line)
 # Coding challenge: Alien dictionary
 
 I occasionally do coding challenges, so I decided to start recording my solutions here (well, at least the successful ones).
@@ -73,6 +74,8 @@ If any of these weights go over total number of letters, I presume something is 
 In the last step, I just sort the letters using these weights and create a sequence.
 
 ### Code
+
+[](@include_code_file solution.js javascript)
 
 Full code is available here: [solution.js](solution.js)
 

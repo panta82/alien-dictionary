@@ -3,21 +3,6 @@ function order(words) {
 	const weights = {};
 	
 	// 1. Extract ordering rules from input words
-	/*
-		[
-			'wrt',
-			'wrf',
-			'er',
-			'ett',
-			'rftt'
-		] =>
-		{
-			t: ['f'],
-			w: ['e'],
-			e: ['r'],
-			r: ['t']
-		}
-	*/
 	wordLoop:
 	for (let row = 0; row < words.length - 1; row++) {
 		const thisWord = words[row];
@@ -50,15 +35,6 @@ function order(words) {
 	}
 
 	// 2. Resolve weights
-	/*
-		{
-			w: 0,
-			r: 2,
-			t: 3,
-			f: 1,
-			e: 1
-		}
-	*/
 	let changed;
 	const alphabetLength = Object.keys(weights).length;
 	do {
