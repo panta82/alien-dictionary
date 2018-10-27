@@ -1,6 +1,3 @@
-
-[//]: # (@remove_next_line)
-
 # Coding challenge: Alien dictionary
 
 I occasionally do coding challenges, so I decided to start recording my solutions here (well, at least the successful ones).
